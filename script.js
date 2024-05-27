@@ -1,6 +1,6 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyGJBck6PfpAmELh1w7KNzl_nLtIl-jMM4Jbs2aaVmTAkWExOocG6AAt0O9tDftcVsIHw/exec'; // Replace with your deployed script URL
 const form = document.forms['registrationForm'];
-    
+
 form.addEventListener('submit', e => {
     e.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -23,4 +23,5 @@ document.getElementById('togglePrivacy').addEventListener('click', function() {
         privacyPolicy.style.display = 'none';
     }
 });
+
 
