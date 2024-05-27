@@ -68,7 +68,7 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-#privacyPolicy {
+#privacyPolicy, #impressum {
     display: none;
     background-color: #ffffff;
     padding: 20px;
@@ -80,7 +80,7 @@ button[type="submit"]:hover {
     margin-top: 20px;
 }
 
-#togglePrivacy {
+#togglePrivacy, #toggleImpressum {
     background: none;
     border: none;
     color: #007bff;
@@ -90,7 +90,7 @@ button[type="submit"]:hover {
     margin-top: 20px;
 }
 
-#togglePrivacy:hover {
+#togglePrivacy:hover, #toggleImpressum:hover {
     color: #0056b3;
 }
 
@@ -124,4 +124,3 @@ button[type="submit"]:hover {
     color: #6c757d;
     margin-bottom: 20px;
 }
-
