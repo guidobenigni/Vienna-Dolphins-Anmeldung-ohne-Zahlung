@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxFhG_m2_IwH-K3MmTgoibemhPnJJydJqeYtQM_B0z0gP5lXbd8peO9n7xHgc3IQY2ysA/exec'; // Replace with your deployed script URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycby8WgDXyTiVRgtPI5bJSvfUEtlBAP8187N2mp5Wt-ao1LGMqd47jTAFM8FVT0eerJaSnw/exec'; // Replace with your deployed script URL
 const form = document.forms['registrationForm'];
 
 form.addEventListener('submit', e => {
