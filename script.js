@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycby8WgDXyTiVRgtPI5bJSvfUEtlBAP8187N2mp5Wt-ao1LGMqd47jTAFM8FVT0eerJaSnw/exec'; // Replace with your deployed script URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyyJKQz8BT44xnO0bqZTMQDxuQcoetwsHseWPRa5a421Mlha1L8USOF3Dj6VZ-XWiQ_qg/exec';
 const form = document.forms['registrationForm'];
 
 form.addEventListener('submit', e => {
@@ -24,8 +24,7 @@ document.getElementById('togglePrivacy').addEventListener('click', function() {
     }
 });
 
-// Event-Listener für den Link zur Datenschutzerklärung
-document.querySelector('a[href="#datenschutzerklaerung"]').addEventListener('click', function(e) {
+document.querySelector('a[href="#privacyPolicy"]').addEventListener('click', function(e) {
     e.preventDefault();
     var privacyPolicy = document.getElementById('privacyPolicy');
     if (privacyPolicy.style.display === 'none' || privacyPolicy.style.display === '') {
@@ -33,7 +32,6 @@ document.querySelector('a[href="#datenschutzerklaerung"]').addEventListener('cli
     } else {
         privacyPolicy.style.display = 'none';
     }
-    // Scrollen zur Datenschutzerklärung
     privacyPolicy.scrollIntoView({ behavior: 'smooth' });
 });
 
