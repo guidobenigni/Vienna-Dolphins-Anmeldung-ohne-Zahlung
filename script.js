@@ -1,9 +1,14 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyyJKQz8BT44xnO0bqZTMQDxuQcoetwsHseWPRa5a421Mlha1L8USOF3Dj6VZ-XWiQ_qg/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzhWYuxuzlu76Cv_fz9zk48FLQXx7L9_wAx0xqSj46Btg-QqylWmYYQ-zG6QZu6RcnqSw/exec';
 const form = document.forms['registrationForm'];
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    const formData = new FormData(form);
+    const preferredPools = formData.getAll('preferredPool[]');
+    formData.delete('preferredPool[]');
+    formData.append('preferredPool', preferredPools.join(', '));
+
+    fetch(scriptURL, { method: 'POST', body: formData})
         .then(response => {
             if (response.ok) {
                 displayMessage('Anmeldung erfolgreich!', 'success');
@@ -53,5 +58,6 @@ function displayMessage(message, type) {
         messageContainer.remove();
     }, 5000);
 }
+
 
 
