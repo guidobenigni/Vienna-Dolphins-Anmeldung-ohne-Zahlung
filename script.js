@@ -37,6 +37,15 @@ document.querySelector('a[href="#datenschutzerklaerung"]').addEventListener('cli
     privacyPolicy.scrollIntoView({ behavior: 'smooth' });
 });
 
+document.getElementById('toggleImpressum').addEventListener('click', function() {
+    var impressum = document.getElementById('impressum');
+    if (impressum.style.display === 'none' || impressum.style.display === '') {
+        impressum.style.display = 'block';
+    } else {
+        impressum.style.display = 'none';
+    }
+});
+
 function displayMessage(message, type) {
     const messageContainer = document.createElement('div');
     messageContainer.className = `message ${type}`;
