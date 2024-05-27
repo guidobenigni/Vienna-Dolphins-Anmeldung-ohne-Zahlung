@@ -6,13 +6,13 @@ form.addEventListener('submit', e => {
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
             if (response.ok) {
-                alert('Anmeldung erfolgreich!');
+                displayMessage('Anmeldung erfolgreich!', 'success');
                 form.reset(); // Reset the form after successful submission
             } else {
-                alert('Es gab ein Problem mit der Anmeldung.');
+                displayMessage('Es gab ein Problem mit der Anmeldung.', 'error');
             }
         })
-        .catch(error => console.error('Fehler!', error.message));
+        .catch(error => displayMessage('Fehler! ' + error.message, 'error'));
 });
 
 document.getElementById('togglePrivacy').addEventListener('click', function() {
@@ -23,5 +23,28 @@ document.getElementById('togglePrivacy').addEventListener('click', function() {
         privacyPolicy.style.display = 'none';
     }
 });
+
+// Event-Listener für den Link zur Datenschutzerklärung
+document.querySelector('a[href="#datenschutzerklaerung"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    var privacyPolicy = document.getElementById('privacyPolicy');
+    if (privacyPolicy.style.display === 'none' || privacyPolicy.style.display === '') {
+        privacyPolicy.style.display = 'block';
+    } else {
+        privacyPolicy.style.display = 'none';
+    }
+    // Scrollen zur Datenschutzerklärung
+    privacyPolicy.scrollIntoView({ behavior: 'smooth' });
+});
+
+function displayMessage(message, type) {
+    const messageContainer = document.createElement('div');
+    messageContainer.className = `message ${type}`;
+    messageContainer.innerText = message;
+    document.body.appendChild(messageContainer);
+    setTimeout(() => {
+        messageContainer.remove();
+    }, 5000);
+}
 
 
