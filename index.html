@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Anmeldung Vienna Dolphins</h1>
-        <form id="registrationForm" enctype="multipart/form-data" method="post" action="https://script.google.com/macros/s/AKfycbyGJBck6PfpAmELh1w7KNzl_nLtIl-jMM4Jbs2aaVmTAkWExOocG6AAt0O9tDftcVsIHw/exec">
+        <form id="registrationForm" enctype="multipart/form-data" method="post">
             <label for="lastName">Familienname:</label>
             <input type="text" id="lastName" name="lastName" required>
 
@@ -47,17 +47,250 @@
             <label for="phoneNumber">Telefonnummer:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" required>
 
+            <label for="preferredPool">Bevorzugtes Bad:</label>
+            <select id="preferredPool" name="preferredPool[]">
+                <option value="Großfeldsiedlungsbad">Großfeldsiedlungsbad</option>
+                <option value="Döblingerbad">Döblingerbad</option>
+            </select>
+            <p class="small-text">Informieren Sie sich online über die Trainingszeiten auf <a href="https://www.viennadolphins.at/" target="_blank">viennadolphins.at</a> oder fragen Sie einen Trainer:<br>
+            Zita Benigni: +43 664 9028 615<br>
+            Karl Kastner: +43 650 9000 675</p>
+
+            <!-- Datenschutz Checkbox wird hier hinzugefügt -->
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+                Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der <a href="#privacyPolicy" target="_blank">Datenschutzerklärung</a> zu.
+            </label>
+
             <button type="submit">Anmelden</button>
         </form>
-        
+
         <button id="togglePrivacy">Datenschutzerklärung anzeigen</button>
         <div id="privacyPolicy" class="hidden">
             <h2>Datenschutzerklärung</h2>
-            <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Alle personenbezogenen Daten werden vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften behandelt. Informationen zur Datenerhebung und weitere Details finden Sie in unserer vollständigen Datenschutzerklärung.</p>
+            <p>Stand: 27. Mai 2024</p>
+            <h2>Verantwortlicher</h2>
+            <p>Schwimmverein "Aqua Motion Vienna Dolphins"<br>Leonard Bernstein Straße 8<br>1220 Wien, Österreich</p>
+            <p>Obmann: Karl Kastner</p>
+            <p>Zentrale Vereinsregister Zahl: 103868865</p>
+            <p>E-Mail-Adresse: <a href="mailto:vienna.dolphins@gmail.com">vienna.dolphins@gmail.com</a></p>
+            <!-- Rest der Datenschutzerklärung -->
+            <h2>Übersicht der Verarbeitungen</h2>
+            <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
+            <h3>Arten der verarbeiteten Daten</h3>
+            <ul>
+                <li>Bestandsdaten.</li>
+                <li>Beschäftigtendaten.</li>
+                <li>Zahlungsdaten.</li>
+                <li>Kontaktdaten.</li>
+                <li>Inhaltsdaten.</li>
+                <li>Vertragsdaten.</li>
+                <li>Nutzungsdaten.</li>
+                <li>Meta-, Kommunikations- und Verfahrensdaten.</li>
+                <li>Protokolldaten.</li>
+                <li>Mitgliederdaten.</li>
+            </ul>
+            <h3>Kategorien betroffener Personen</h3>
+            <ul>
+                <li>Leistungsempfänger und Auftraggeber.</li>
+                <li>Beschäftigte.</li>
+                <li>Interessenten.</li>
+                <li>Kommunikationspartner.</li>
+                <li>Nutzer.</li>
+                <li>Mitglieder.</li>
+                <li>Geschäfts- und Vertragspartner.</li>
+                <li>Bildungs- und Kursteilnehmer.</li>
+            </ul>
+            <h3>Zwecke der Verarbeitung</h3>
+            <ul>
+                <li>Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten.</li>
+                <li>Kommunikation.</li>
+                <li>Sicherheitsmaßnahmen.</li>
+                <li>Büro- und Organisationsverfahren.</li>
+                <li>Organisations- und Verwaltungsverfahren.</li>
+                <li>Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.</li>
+                <li>Begründung und Durchführung von Beschäftigungsverhältnissen.</li>
+                <li>Informationstechnische Infrastruktur.</li>
+                <li>Geschäftsprozesse und betriebswirtschaftliche Verfahren.</li>
+            </ul>
+            <h2>Maßgebliche Rechtsgrundlagen</h2>
+            <p><strong>Maßgebliche Rechtsgrundlagen nach der DSGVO: </strong>Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder Sitzland gelten können. Sollten ferner im Einzelfall speziellere Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.</p>
+            <ul>
+                <li><strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO)</strong> - Die betroffene Person hat ihre Einwilligung in die Verarbeitung der sie betreffenden personenbezogenen Daten für einen spezifischen Zweck oder mehrere bestimmte Zwecke gegeben.</li>
+                <li><strong>Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO)</strong> - Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, die auf Anfrage der betroffenen Person erfolgen.</li>
+                <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c) DSGVO)</strong> - Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich, der der Verantwortliche unterliegt.</li>
+                <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO)</strong> - die Verarbeitung ist zur Wahrung der berechtigten Interessen des Verantwortlichen oder eines Dritten notwendig, vorausgesetzt, dass die Interessen, Grundrechte und Grundfreiheiten der betroffenen Person, die den Schutz personenbezogener Daten verlangen, nicht überwiegen.</li>
+                <li><strong>Verarbeitung besonderer Kategorien personenbezogener Daten in Bezug auf Gesundheitswesen, Beruf und soziale Sicherheit (Art. 9 Abs. 2 lit. h) DSGVO)</strong> - Die Verarbeitung ist für Zwecke der Gesundheitsvorsorge oder der Arbeitsmedizin, für die Beurteilung der Arbeitsfähigkeit des Beschäftigten, für die medizinische Diagnostik, die Versorgung oder Behandlung im Gesundheits- oder Sozialbereich oder für die Verwaltung von Systemen und Diensten im Gesundheits- oder Sozialbereich auf der Grundlage des Unionsrechts oder des Rechts eines Mitgliedstaats oder aufgrund eines Vertrags mit einem Angehörigen eines Gesundheitsberufs erforderlich.</li>
+                <li>Vertrag über die Mitgliedschaft (Satzung) (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</li>
+            </ul>
+            <p><strong>Nationale Datenschutzregelungen in Österreich: </strong>Zusätzlich zu den Datenschutzregelungen der DSGVO gelten nationale Regelungen zum Datenschutz in Österreich. Hierzu gehört insbesondere das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutzgesetz – DSG). Das Datenschutzgesetz enthält insbesondere Spezialregelungen zum Recht auf Auskunft, zum Recht auf Richtigstellung oder Löschung, zur Verarbeitung besonderer Kategorien personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur Übermittlung sowie zur automatisierten Entscheidungsfindung im Einzelfall.</p>
+            <p><strong>Hinweis auf Geltung DSGVO und Schweizer DSG: </strong>Diese Datenschutzhinweise dienen sowohl der Informationserteilung nach dem Schweizer DSG als auch nach der Datenschutzgrundverordnung (DSGVO). Aus diesem Grund bitten wir Sie zu beachten, dass aufgrund der breiteren räumlichen Anwendung und Verständlichkeit die Begriffe der DSGVO verwendet werden. Insbesondere statt der im Schweizer DSG verwendeten Begriffe „Bearbeitung" von „Personendaten", "überwiegendes Interesse" und "besonders schützenswerte Personendaten" werden die in der DSGVO verwendeten Begriffe „Verarbeitung" von „personenbezogenen Daten" sowie "berechtigtes Interesse" und "besondere Kategorien von Daten" verwendet. Die gesetzliche Bedeutung der Begriffe wird jedoch im Rahmen der Geltung des Schweizer DSG weiterhin nach dem Schweizer DSG bestimmt.</p>
+
+            <h2>Sicherheitsmaßnahmen</h2>
+            <p>Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter Berücksichtigung des Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeiten und des Ausmaßes der Bedrohung der Rechte und Freiheiten natürlicher Personen geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.</p>
+            <p>Zu den Maßnahmen gehören insbesondere die Sicherung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch Kontrolle des physischen und elektronischen Zugangs zu den Daten als auch des sie betreffenden Zugriffs, der Eingabe, der Weitergabe, der Sicherung der Verfügbarkeit und ihrer Trennung. Des Weiteren haben wir Verfahren eingerichtet, die eine Wahrnehmung von Betroffenenrechten, die Löschung von Daten und Reaktionen auf die Gefährdung der Daten gewährleisten. Ferner berücksichtigen wir den Schutz personenbezogener Daten bereits bei der Entwicklung bzw. Auswahl von Hardware, Software sowie Verfahren entsprechend dem Prinzip des Datenschutzes, durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen.</p>
+            <p>Sicherung von Online-Verbindungen durch TLS-/SSL-Verschlüsselungstechnologie (HTTPS): Um die Daten der Nutzer, die über unsere Online-Dienste übertragen werden, vor unerlaubten Zugriffen zu schützen, setzen wir auf die TLS-/SSL-Verschlüsselungstechnologie. Secure Sockets Layer (SSL) und Transport Layer Security (TLS) sind die Eckpfeiler der sicheren Datenübertragung im Internet. Diese Technologien verschlüsseln die Informationen, die zwischen der Website oder App und dem Browser des Nutzers (oder zwischen zwei Servern) übertragen werden, wodurch die Daten vor unbefugtem Zugriff geschützt sind. TLS, als die weiterentwickelte und sicherere Version von SSL, gewährleistet, dass alle Datenübertragungen den höchsten Sicherheitsstandards entsprechen. Wenn eine Website durch ein SSL-/TLS-Zertifikat gesichert ist, wird dies durch die Anzeige von HTTPS in der URL signalisiert. Dies dient als ein Indikator für die Nutzer, dass ihre Daten sicher und verschlüsselt übertragen werden.</p>
+
+            <h2>Übermittlung von personenbezogenen Daten</h2>
+            <p>Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es vor, dass diese an andere Stellen, Unternehmen, rechtlich selbstständige Organisationseinheiten oder Personen übermittelt beziehungsweise ihnen gegenüber offengelegt werden. Zu den Empfängern dieser Daten können z. B. mit IT-Aufgaben beauftragte Dienstleister gehören oder Anbieter von Diensten und Inhalten, die in eine Website eingebunden sind. In solchen Fällen beachten wir die gesetzlichen Vorgaben und schließen insbesondere entsprechende Verträge bzw. Vereinbarungen, die dem Schutz Ihrer Daten dienen, mit den Empfängern Ihrer Daten ab.</p>
+            <p>Datenübermittlung innerhalb der Organisation: Datenübermittlung innerhalb der Unternehmensgruppe: Wir können personenbezogene Daten an andere Unternehmen innerhalb unserer Unternehmensgruppe übermitteln oder ihnen den Zugriff darauf gewähren. Sofern die Datenweitergabe zu administrativen Zwecken erfolgt, beruht sie auf unseren berechtigten unternehmerischen und betriebswirtschaftlichen Interessen oder erfolgt, sofern sie zur Erfüllung unserer vertragsbezogenen Verpflichtungen erforderlich ist beziehungsweise wenn eine Einwilligung der Betroffenen oder eine gesetzliche Erlaubnis vorliegt.</p>
+
+            <h2>Allgemeine Informationen zur Datenspeicherung und Löschung</h2>
+            <p>Wir löschen personenbezogene Daten, die wir verarbeiten, gemäß den gesetzlichen Bestimmungen, sobald die zugrundeliegenden Einwilligungen widerrufen werden oder keine weiteren rechtlichen Grundlagen für die Verarbeitung bestehen. Dies betrifft Fälle, in denen der ursprüngliche Verarbeitungszweck entfällt oder die Daten nicht mehr benötigt werden. Ausnahmen von dieser Regelung bestehen, wenn gesetzliche Pflichten oder besondere Interessen eine längere Aufbewahrung oder Archivierung der Daten erfordern.</p>
+            <p>Insbesondere müssen Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen oder deren Speicherung notwendig ist zur Rechtsverfolgung oder zum Schutz der Rechte anderer natürlicher oder juristischer Personen, entsprechend archiviert werden.</p>
+            <p>Unsere Datenschutzhinweise enthalten zusätzliche Informationen zur Aufbewahrung und Löschung von Daten, die speziell für bestimmte Verarbeitungsprozesse gelten.</p>
+            <p>Bei mehreren Angaben zur Aufbewahrungsdauer oder Löschungsfristen eines Datums, ist stets die längste Frist maßgeblich.</p>
+            <p>Beginnt eine Frist nicht ausdrücklich zu einem bestimmten Datum und beträgt sie mindestens ein Jahr, so startet sie automatisch am Ende des Kalenderjahres, in dem das fristauslösende Ereignis eingetreten ist. Im Fall laufender Vertragsverhältnisse, in deren Rahmen Daten gespeichert werden, ist das fristauslösende Ereignis der Zeitpunkt des Wirksamwerdens der Kündigung oder sonstige Beendigung des Rechtsverhältnisses.</p>
+            <p>Daten, die nicht mehr für den ursprünglich vorgesehenen Zweck, sondern aufgrund gesetzlicher Vorgaben oder anderer Gründe aufbewahrt werden, verarbeiten wir ausschließlich zu den Gründen, die ihre Aufbewahrung rechtfertigen.</p>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>Aufbewahrung und Löschung von Daten: </strong>Die folgenden allgemeinen Fristen gelten gemäß österreichischem Recht für die Aufbewahrung und Archivierung:
+                    <ul>
+                        <li>10 Jahre - Aufbewahrungsfrist für Bücher und Aufzeichnungen, Jahresabschlüsse, Inventare, Lageberichte, Eröffnungsbilanzen, Buchungsbelege und Rechnungen sowie alle erforderlichen Arbeitsanweisungen und sonstigen Organisationsunterlagen (Bundesabgabenordnung (BAO §132), Unternehmensgesetzbuch (UGB §§190-212)).</li>
+                        <li>6 Jahre - Sonstige Geschäftsunterlagen: Erhaltene Handels- oder Geschäftsbriefe, Kopien der versendeten Handels- oder Geschäftsbriefe und andere Unterlagen, sofern sie für die Steuer relevant sind. Dazu gehören beispielsweise Stundenlohnscheine, Betriebsabrechnungsbögen, Kalkulationsunterlagen, Preisauszeichnungen und Lohnabrechnungsunterlagen, sofern sie nicht bereits Buchungsbelege und Kassenstreifen sind (Bundesabgabenordnung (BAO §132), Unternehmensgesetzbuch (UGB §§190-212)).</li>
+                        <li>3 Jahre - Daten, die erforderlich sind, um potenzielle Gewährleistungs- und Schadensersatzansprüche oder ähnliche vertragliche Ansprüche und Rechte zu berücksichtigen sowie damit verbundene Anfragen zu bearbeiten, basierend auf früheren Geschäftserfahrungen und üblichen Branchenpraktiken, werden für die Dauer der regulären gesetzlichen Verjährungsfrist von drei Jahren gespeichert (§§ 1478, 1480 ABGB).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Rechte der betroffenen Personen</h2>
+            <p>Rechte der betroffenen Personen aus der DSGVO: Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:</p>
+            <ul>
+                <li><strong>Widerspruchsrecht:</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling. Werden die Sie betreffenden personenbezogenen Daten verarbeitet, um Direktwerbung zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten zum Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht.</li>
+                <li><strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht, erteilte Einwilligungen jederzeit zu widerrufen.</li>
+                <li><strong>Auskunftsrecht:</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten entsprechend den gesetzlichen Vorgaben.</li>
+                <li><strong>Recht auf Berichtigung:</strong> Sie haben entsprechend den gesetzlichen Vorgaben das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.</li>
+                <li><strong>Recht auf Löschung und Einschränkung der Verarbeitung:</strong> Sie haben nach Maßgabe der gesetzlichen Vorgaben das Recht, zu verlangen, dass Sie betreffende Daten unverzüglich gelöscht werden, bzw. alternativ nach Maßgabe der gesetzlichen Vorgaben eine Einschränkung der Verarbeitung der Daten zu verlangen.</li>
+                <li><strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Sie betreffende Daten, die Sie uns bereitgestellt haben, nach Maßgabe der gesetzlichen Vorgaben in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder deren Übermittlung an einen anderen Verantwortlichen zu fordern.</li>
+                <li><strong>Beschwerde bei Aufsichtsbehörde:</strong> Sie haben unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.</li>
+            </ul>
+
+            <h2>Wahrnehmung von Aufgaben nach Satzung oder Geschäftsordnung</h2>
+            <p>Wir verarbeiten die Daten unserer Mitglieder, Unterstützer, Interessenten, Geschäftspartner oder sonstiger Personen (Zusammenfassend "Betroffene"), wenn wir mit ihnen in einem Mitgliedschafts- oder sonstigem geschäftlichen Verhältnis stehen und unsere Aufgaben wahrnehmen sowie Empfänger von Leistungen und Zuwendungen sind. Im Übrigen verarbeiten wir die Daten Betroffener auf Grundlage unserer berechtigten Interessen, z. B. wenn es sich um administrative Aufgaben oder Öffentlichkeitsarbeit handelt.</p>
+            <p>Die hierbei verarbeiteten Daten, die Art, der Umfang und der Zweck und die Erforderlichkeit ihrer Verarbeitung, bestimmen sich nach dem zugrundeliegenden Mitgliedschafts- oder Vertragsverhältnis, aus dem sich auch die Erforderlichkeit etwaiger Datenangaben ergeben (im Übrigen weisen wir auf erforderliche Daten hin).</p>
+            <p>Wir löschen Daten, die zur Erbringung unserer satzungs- und geschäftsmäßigen Zwecke nicht mehr erforderlich sind. Dies bestimmt sich entsprechend der jeweiligen Aufgaben und vertraglichen Beziehungen. Wir bewahren die Daten so lange auf, wie sie zur Geschäftsabwicklung, als auch im Hinblick auf etwaige Gewährleistungs- oder Haftungspflichten auf Grundlage unserer berechtigten Interesse an deren Regelung relevant sein können. Die Erforderlichkeit der Aufbewahrung der Daten wird regelmäßig überprüft; im Übrigen gelten die gesetzlichen Aufbewahrungspflichten.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer, etc.); Kontaktdaten (z. B. Post- und E-Mail-Adressen oder Telefonnummern); Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie); Mitgliederdaten (z.B.  persönliche Daten wie Name, Alter, Geschlecht, Kontaktdaten (E-Mail-Adresse, Telefonnummer), Mitgliedsnummer, Informationen über  Mitgliedsbeiträge, Teilnahme an Veranstaltungen, etc.); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie). Inhaltsdaten (z. B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z. B. Angaben zur Autorenschaft oder Zeitpunkt der Erstellung).</li>
+                <li><strong>Betroffene Personen:</strong> Mitglieder.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Kommunikation. Organisations- und Verwaltungsverfahren.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO). Vertrag über die Mitgliedschaft (Satzung) (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</li>
+            </ul>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>Mitgliederverwaltung:</strong> Verfahren, die im Rahmen der Mitgliederverwaltung erforderlich sind, umfassen die Akquise und Aufnahme neuer Mitglieder, die Entwicklung und Umsetzung von Strategien zur Mitgliederbindung sowie die Sicherstellung einer effektiven Kommunikation mit den Mitgliedern. Diese Prozesse beinhalten die sorgfältige Erfassung und Pflege von Mitgliederdaten, die regelmäßige Aktualisierung von Mitgliedsinformationen und die Verwaltung von Mitgliedsbeiträgen einschließlich der Rechnungsstellung und Abrechnung; <span class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO), Vertrag über die Mitgliedschaft (Satzung) (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</span></li>
+            </ul>
+            <h2>Geschäftliche Leistungen</h2>
+            <p>Wir verarbeiten Daten unserer Vertrags- und Geschäftspartner, z. B. Kunden und Interessenten (zusammenfassend als „Vertragspartner" bezeichnet), im Rahmen von vertraglichen und vergleichbaren Rechtsverhältnissen sowie damit verbundenen Maßnahmen und im Hinblick auf die Kommunikation mit den Vertragspartnern (oder vorvertraglich), etwa zur Beantwortung von Anfragen.</p>
+            <p>Wir verwenden diese Daten, um unsere vertraglichen Verpflichtungen zu erfüllen. Dazu gehören insbesondere die Pflichten zur Erbringung der vereinbarten Leistungen, etwaige Aktualisierungspflichten und Abhilfe bei Gewährleistungs- und sonstigen Leistungsstörungen. Darüber hinaus verwenden wir die Daten zur Wahrung unserer Rechte und zum Zwecke der mit diesen Pflichten verbundenen Verwaltungsaufgaben sowie der Unternehmensorganisation. Zudem verarbeiten wir die Daten auf Grundlage unserer berechtigten Interessen sowohl an einer ordnungsgemäßen und betriebswirtschaftlichen Geschäftsführung als auch an Sicherheitsmaßnahmen zum Schutz unserer Vertragspartner und unseres Geschäftsbetriebs vor Missbrauch, Gefährdung ihrer Daten, Geheimnisse, Informationen und Rechte (z. B. zur Beteiligung von Telekommunikations-, Transport- und sonstigen Hilfsdiensten sowie Subunternehmern, Banken, Steuer- und Rechtsberatern, Zahlungsdienstleistern oder Finanzbehörden). Im Rahmen des geltenden Rechts geben wir die Daten von Vertragspartnern nur insoweit an Dritte weiter, als dies für die vorgenannten Zwecke oder zur Erfüllung gesetzlicher Pflichten erforderlich ist. Über weitere Formen der Verarbeitung, etwa zu Marketingzwecken, werden die Vertragspartner im Rahmen dieser Datenschutzerklärung informiert.</p>
+            <p>Welche Daten für die vorgenannten Zwecke erforderlich sind, teilen wir den Vertragspartnern vor oder im Rahmen der Datenerhebung, z. B. in Onlineformularen, durch besondere Kennzeichnung (z. B. Farben) bzw. Symbole (z. B. Sternchen o. Ä.), oder persönlich mit.</p>
+            <p>Wir löschen die Daten nach Ablauf gesetzlicher Gewährleistungs- und vergleichbarer Pflichten, d. h. grundsätzlich nach vier Jahren, es sei denn, dass die Daten in einem Kundenkonto gespeichert werden, z. B., solange sie aus gesetzlichen Gründen der Archivierung aufbewahrt werden müssen (etwa für Steuerzwecke im Regelfall zehn Jahre). Daten, die uns im Rahmen eines Auftrags durch den Vertragspartner offengelegt wurden, löschen wir entsprechend den Vorgaben und grundsätzlich nach Ende des Auftrags.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer, etc.); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie); Kontaktdaten (z. B. Post- und E-Mail-Adressen oder Telefonnummern). Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie).</li>
+                <li><strong>Betroffene Personen:</strong> Leistungsempfänger und Auftraggeber; Interessenten; Geschäfts- und Vertragspartner. Bildungs- und Kursteilnehmer.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten; Kommunikation; Büro- und Organisationsverfahren; Organisations- und Verwaltungsverfahren. Geschäftsprozesse und betriebswirtschaftliche Verfahren.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO); Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>Bildungs- und Schulungsleistungen:</strong> Wir verarbeiten die Daten der Teilnehmer unserer Bildungs- und Schulungsangebote (einheitlich bezeichnet als "Aus- und Fortzubildende"), um ihnen gegenüber unsere Schulungsleistungen erbringen zu können. Die hierbei verarbeiteten Daten, die Art, der Umfang, der Zweck und die Erforderlichkeit ihrer Verarbeitung bestimmen sich nach dem zugrundeliegenden Vertrags- und Schulungsverhältnis. Zu den Verarbeitungsformen gehören auch die Leistungsbewertung und die Evaluation unserer Leistungen sowie jener der Lehrenden. In Rahmen unserer Tätigkeit können wir ferner besondere Kategorien von Daten, hier insbesondere Angaben zur Gesundheit der Aus- und Fortzubildenden sowie Daten, aus denen die ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen hervorgehen, verarbeiten. Hierzu holen wir, sofern erforderlich, eine ausdrückliche Einwilligung der Aus- und Fortzubildenden ein und verarbeiten die besonderen Kategorien von Daten ansonsten nur, wenn es zur Erbringung der Schulungsleistungen, zu Zwecken der Gesundheitsvorsorge, des Sozialschutzes oder des Schutzes lebensnotwendiger Interessen der Aus- und Fortzubildenden erforderlich ist; <span class=""><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</span></li>
+            </ul>
+
+            <h2>Geschäftsprozesse und -verfahren</h2>
+            <p>Personenbezogene Daten von Leistungsempfängern und Auftraggebern – darunter Kunden, Klienten oder in speziellen Fällen Mandanten, Patienten oder Geschäftspartner sowie weitere Dritte – werden im Rahmen vertraglicher sowie vergleichbarer Rechtsverhältnisse und vorvertraglicher Maßnahmen wie der Anbahnung von Geschäftsbeziehungen verarbeitet. Diese Datenverarbeitung unterstützt und erleichtert betriebswirtschaftliche Abläufe in Bereichen wie Kundenmanagement, Vertrieb, Zahlungsverkehr, Buchhaltung und Projektmanagement.</p>
+            <p>Die erfassten Daten dienen dazu, vertragliche Verpflichtungen zu erfüllen und betriebliche Prozesse effizient zu gestalten. Hierzu gehört die Abwicklung von Geschäftstransaktionen, das Management von Kundenbeziehungen, die Optimierung von Vertriebsstrategien sowie die Gewährleistung interner Rechnungs- und Finanzprozesse. Zusätzlich unterstützen die Daten die Wahrung der Rechte des Verantwortlichen und fördern Verwaltungsaufgaben sowie die Organisation des Unternehmens.</p>
+            <p>Personenbezogene Daten können an Dritte weitergegeben werden, sofern dies zur Erfüllung der genannten Zwecke oder gesetzlicher Verpflichtungen notwendig ist.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie); Kontaktdaten (z. B. Post- und E-Mail-Adressen oder Telefonnummern); Inhaltsdaten (z. B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z. B. Angaben zur Autorenschaft); Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie); Nutzungsdaten (z. B. Seitenaufrufe und Verweildauer, Klickpfade, Nutzungsintensität und -frequenz, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen). Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen).</li>
+                <li><strong>Betroffene Personen:</strong> Leistungsempfänger und Auftraggeber; Interessenten; Kommunikationspartner. Geschäfts- und Vertragspartner.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten; Büro- und Organisationsverfahren. Geschäftsprozesse und betriebswirtschaftliche Verfahren.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>Wirtschaftliche Analysen und Marktforschung:</strong> Zur Erfüllung betriebswirtschaftlicher Zwecke und zur Erkennung von Markttendenzen, Wünschen der Vertragspartner und Nutzern werden die vorliegenden Daten zu Geschäftsvorgängen, Verträgen, Anfragen etc. analysiert. In die Gruppe der betroffenen Personen können Vertragspartner, Interessenten, Kunden, Besucher und Nutzer des Onlineangebotes des Verantwortlichen fallen. Die Durchführung der Analysen dient den Zwecken der betriebswirtschaftlichen Auswertungen, des Marketings und der Marktforschung (z. B. zur Bestimmung von Kundengruppen mit unterschiedlichen Eigenschaften). Dabei werden, sofern vorhanden, Profile von registrierten Nutzern samt ihrer Angaben zu in Anspruch genommenen Leistungen berücksichtigt. Die Analysen dienen ausschließlich dem Verantwortlichen und werden nicht extern offenbart, außer es handelt sich um anonyme Analysen mit zusammengefassten, also anonymisierten Werten. Zudem wird auf die Privatsphäre der Nutzer Rücksicht genommen; die Daten werden für Analysezwecke möglichst pseudonymisiert und, sofern machbar, anonymisiert verarbeitet (z. B. als zusammengefasste Daten); <span class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</span></li>
+            </ul>
+
+            <h2>Im Rahmen der Geschäftstätigkeit eingesetzte Anbieter und Services</h2>
+            <p>Im Rahmen unserer Geschäftstätigkeit nutzen wir unter Beachtung der gesetzlichen Vorgaben zusätzliche Dienste, Plattformen, Schnittstellen oder Plug-ins von Drittanbietern (kurz "Dienste"). Deren Nutzung beruht auf unseren Interessen an einer ordnungsgemäßen, rechtmäßigen und sicheren Durchführung unserer Geschäftstätigkeit.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie); Kontaktdaten (z. B. Post- und E-Mail-Adressen oder Telefonnummern); Inhaltsdaten (z. B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z. B. Angaben zur Autorenschaft); Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie).</li>
+                <li><strong>Betroffene Personen:</strong> Leistungsempfänger und Auftraggeber; Interessenten. Geschäfts- und Vertragspartner.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten; Büro- und Organisationsverfahren. Geschäftsprozesse und betriebswirtschaftliche Verfahren.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+
+            <h2>Zahlungsverfahren</h2>
+            <p>Im Rahmen von Vertrags- und sonstigen Rechtsbeziehungen, aufgrund gesetzlicher Pflichten oder sonst auf Grundlage unserer berechtigten Interessen bieten wir den betroffenen Personen effiziente und sichere Zahlungsmöglichkeiten an und setzen hierzu neben Banken und Kreditinstituten weitere Dienstleister ein (zusammenfassend "Zahlungsdienstleister").</p>
+            <p>Zu den durch die Zahlungsdienstleister verarbeiteten Daten gehören Bestandsdaten, wie z. B. der Name und die Adresse, Bankdaten, wie z. B. Kontonummern oder Kreditkartennummern, Passwörter, TANs und Prüfsummen sowie die Vertrags-, Summen- und empfängerbezogenen Angaben. Die Angaben sind erforderlich, um die Transaktionen durchzuführen. Die eingegebenen Daten werden jedoch nur durch die Zahlungsdienstleister verarbeitet und bei diesen gespeichert. D. h., wir erhalten keine konto- oder kreditkartenbezogenen Informationen, sondern lediglich Informationen mit Bestätigung oder Negativbeauskunftung der Zahlung. Unter Umständen werden die Daten seitens der Zahlungsdienstleister an Wirtschaftsauskunfteien übermittelt. Diese Übermittlung bezweckt die Identitäts- und Bonitätsprüfung. Hierzu verweisen wir auf die AGB und die Datenschutzhinweise der Zahlungsdienstleister.</p>
+            <p>Für die Zahlungsgeschäfte gelten die Geschäftsbedingungen und die Datenschutzhinweise der jeweiligen Zahlungsdienstleister, welche innerhalb der jeweiligen Webseiten bzw. Transaktionsapplikationen abrufbar sind. Wir verweisen auf diese ebenfalls zwecks weiterer Informationen und Geltendmachung von Widerrufs-, Auskunfts- und anderen Betroffenenrechten.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. der vollständige Name, Wohnadresse, Kontaktinformationen, Kundennummer, etc.); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie); Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie); Nutzungsdaten (z. B. Seitenaufrufe und Verweildauer, Klickpfade, Nutzungsintensität und -frequenz, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen). Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen).</li>
+                <li><strong>Betroffene Personen:</strong> Leistungsempfänger und Auftraggeber; Geschäfts- und Vertragspartner. Interessenten.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten. Geschäftsprozesse und betriebswirtschaftliche Verfahren.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>PayPal:</strong> Zahlungsdienstleistungen (technische Anbindung von Online-Bezahlmethoden) (z. B. PayPal, PayPal Plus, Braintree); <strong>Dienstanbieter:</strong> PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxemburg; <span class=""><strong>Rechtsgrundlagen:</strong> Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO); </span><strong>Website:</strong> <a href="https://www.paypal.com/de" target="_blank">https://www.paypal.com/de</a>. <strong>Datenschutzerklärung:</strong> <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full" target="_blank">https://www.paypal.com/de/webapps/mpp/ua/privacy-full</a>.</li>
+            </ul>
+
+            <h2>Bereitstellung des Onlineangebots und Webhosting</h2>
+            <p>Wir verarbeiten die Daten der Nutzer, um ihnen unsere Online-Dienste zur Verfügung stellen zu können. Zu diesem Zweck verarbeiten wir die IP-Adresse des Nutzers, die notwendig ist, um die Inhalte und Funktionen unserer Online-Dienste an den Browser oder das Endgerät der Nutzer zu übermitteln.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B. Seitenaufrufe und Verweildauer, Klickpfade, Nutzungsintensität und -frequenz, verwendete Gerätetypen und Betriebssysteme, Interaktionen mit Inhalten und Funktionen); Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, beteiligte Personen). Protokolldaten (z. B. Logfiles betreffend Logins oder den Abruf von Daten oder Zugriffszeiten.).</li>
+                <li><strong>Betroffene Personen:</strong> Nutzer (z. B. Webseitenbesucher, Nutzer von Onlinediensten).</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit; Informationstechnische Infrastruktur (Betrieb und Bereitstellung von Informationssystemen und technischen Geräten (Computer, Server etc.).). Sicherheitsmaßnahmen.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+            <p><strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong></p>
+            <ul class="m-elements">
+                <li><strong>Erhebung von Zugriffsdaten und Logfiles:</strong> Der Zugriff auf unser Onlineangebot wird in Form von sogenannten "Server-Logfiles" protokolliert. Zu den Serverlogfiles können die Adresse und der Name der abgerufenen Webseiten und Dateien, Datum und Uhrzeit des Abrufs, übertragene Datenmengen, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite) und im Regelfall IP-Adressen und der anfragende Provider gehören. Die Serverlogfiles können zum einen zu Sicherheitszwecken eingesetzt werden, z. B. um eine Überlastung der Server zu vermeiden (insbesondere im Fall von missbräuchlichen Angriffen, sogenannten DDoS-Attacken), und zum anderen, um die Auslastung der Server und ihre Stabilität sicherzustellen; <span class=""><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO). </span><strong>Löschung von Daten:</strong> Logfile-Informationen werden für die Dauer von maximal 30 Tagen gespeichert und danach gelöscht oder anonymisiert. Daten, deren weitere Aufbewahrung zu Beweiszwecken erforderlich ist, sind bis zur endgültigen Klärung des jeweiligen Vorfalls von der Löschung ausgenommen.</li>
+            </ul>
+
+            <h2>Kommunikation via Messenger</h2>
+            <p>Wir setzen zu Zwecken der Kommunikation Messenger ein und bitten daher darum, die nachfolgenden Hinweise zur Funktionsfähigkeit der Messenger, zur Verschlüsselung, zur Nutzung der Metadaten der Kommunikation und zu Ihren Widerspruchsmöglichkeiten zu beachten.</p>
+            <p>Sie können uns auch auf alternativen Wegen, z. B. via Telefon oder E-Mail, kontaktieren. Bitte nutzen Sie die Ihnen mitgeteilten Kontaktmöglichkeiten oder die innerhalb unseres Onlineangebotes angegebenen Kontaktmöglichkeiten.</p>
+            <p>Im Fall einer Ende-zu-Ende-Verschlüsselung von Inhalten (d. h., der Inhalt Ihrer Nachricht und Anhänge) weisen wir darauf hin, dass die Kommunikationsinhalte (d. h., der Inhalt der Nachricht und angehängte Bilder) von Ende zu Ende verschlüsselt werden. Das bedeutet, dass der Inhalt der Nachrichten nicht einsehbar ist, nicht einmal durch die Messenger-Anbieter selbst. Sie sollten immer eine aktuelle Version der Messenger mit aktivierter Verschlüsselung nutzen, damit die Verschlüsselung der Nachrichteninhalte sichergestellt ist. </p>
+            <p>Wir weisen unsere Kommunikationspartner jedoch zusätzlich darauf hin, dass die Anbieter der Messenger zwar nicht den Inhalt einsehen, aber in Erfahrung bringen können, dass und wann Kommunikationspartner mit uns kommunizieren sowie technische Informationen zum verwendeten Gerät der Kommunikationspartner und je nach Einstellungen ihres Gerätes auch Standortinformationen (sogenannte Metadaten) verarbeitet werden.</p>
+            <p><strong>Hinweise zu Rechtsgrundlagen:</strong> Sofern wir Kommunikationspartner vor der Kommunikation mit ihnen via Messenger um eine Erlaubnis bitten, ist die Rechtsgrundlage unserer Verarbeitung ihrer Daten deren Einwilligung. Im Übrigen, falls wir nicht um eine Einwilligung bitten und sie z. B. von sich aus Kontakt mit uns aufnehmen, nutzen wir Messenger im Verhältnis zu unseren Vertragspartnern sowie im Rahmen der Vertragsanbahnung als eine vertragliche Maßnahme und im Fall anderer Interessenten und Kommunikationspartner auf Grundlage unserer berechtigten Interessen an einer schnellen und effizienten Kommunikation und Erfüllung der Bedürfnisse unser Kommunikationspartner an der Kommunikation via Messenger. Ferner weisen wir Sie darauf hin, dass wir die uns mitgeteilten Kontaktdaten ohne Ihre Einwilligung nicht erstmalig an die Messenger übermitteln.</p>
+            <p><strong>Widerruf, Widerspruch und Löschung:</strong> Sie können jederzeit eine erteilte Einwilligung widerrufen und einer Kommunikation mit uns via Messenger jederzeit widersprechen.</p>
+            <ul class="m-elements">
+                <li><strong>Verarbeitete Datenarten:</strong> Kontaktdaten (z. B. Post- und E-Mail-Adressen oder Telefonnummern). Inhaltsdaten (z. B. textliche oder bildliche Nachrichten und Beiträge sowie die sie betreffenden Informationen, wie z. B. Angaben zur Autorenschaft).</li>
+                <li><strong>Betroffene Personen:</strong> Kommunikationspartner.</li>
+                <li><strong>Zwecke der Verarbeitung:</strong> Kommunikation.</li>
+                <li><strong>Aufbewahrung und Löschung:</strong> Löschung entsprechend Angaben im Abschnitt "Allgemeine Informationen zur Datenspeicherung und Löschung".</li>
+                <li class=""><strong>Rechtsgrundlagen:</strong> Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO); Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO). Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).</li>
+            </ul>
+
+            <h2>Änderung und Aktualisierung</h2>
+            <p>Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Änderungen eine Mitwirkungshandlung Ihrerseits (z. B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.</p>
+            <p>Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und Organisationen angeben, bitten wir zu beachten, dass die Adressen sich über die Zeit ändern können und bitten die Angaben vor Kontaktaufnahme zu prüfen.</p>
+        </div>
+
+        <button id="toggleImpressum">Impressum anzeigen</button>
+        <div id="impressum" class="hidden">
+            <h2>Impressum</h2>
+            <p><strong>Schwimmverein "Aqua Motion Vienna Dolphins"</strong></p>
+            <p>Leonard Bernstein Straße 8<br>1220 Wien, Österreich</p>
+            <p>Vertreten durch: Karl Kastner</p>
+            <p>Kontakt:</p>
+            <p>Telefon: +43 650 9000 675<br>E-Mail: <a href="mailto:vienna.dolphins@gmail.com">vienna.dolphins@gmail.com</a></p>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
